@@ -8,6 +8,7 @@ import PropTypes from 'prop-types';
 import CountrySelection from './CountrySelection';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import CountryLanding from './CountryLanding';
+import CountryList from './CountryList';
 
 
 
@@ -19,6 +20,7 @@ function App(props) {
       <Router>
         <Route path="/" exact component={CountrySelection} />
         <Route path="/countryLanding" exact component={CountryLanding} />
+        <Route path="/countryList" exact component={CountryList} />
     
       </Router>
 

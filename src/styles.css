@@ -1,6 +1,4 @@
-
-.countryChange{
-
+.countryChange {
     background-size: 'contain';
     background-repeat: 'no-repeat';
     padding-left: 16;
@@ -8,15 +6,28 @@
     width: auto;
     display: inline-block;
     padding-right: 30;
-   
 }
 
-.activeTab{
-    color:#1074ac;
+.MuiDialog-paper-34 {
+    margin: 30px !important;
 }
-.inactiveTab{
+
+[class*="MuiPaper-elevation"] {
+    box-shadow: none !important;
+}
+
+[class*="MuiPaper-root"] {
+    background-color: transparent !important;
+}
+
+.activeTab {
+    color: #1074ac;
+}
+
+.inactiveTab {
     color: #808080;
 }
-input:focus{
-    outline:none
+
+input:focus {
+    outline: none
 }

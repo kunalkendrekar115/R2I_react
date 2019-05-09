@@ -90,7 +90,7 @@ export default class ExchangeCalculator extends Component {
 
               <div style={{ display: 'flex', height: 30, marginTop: 10, alignItems: 'flex-end' }}>
                 <input type="number" style={{ marginLeft: 4, width: '100%', border: 'none', fontSize: 20 }}></input>
-                <span style={{ fontSize: 16, marginBottom: 2 }}>USD</span>
+                <span style={{ fontSize: 16, marginBottom: 2 }}>INR</span>
               </div>
               <div style={{ width: '100%', height: 2, marginTop: 2, background: '#20bad2' }}></div>
             </div>
@@ -99,12 +99,12 @@ export default class ExchangeCalculator extends Component {
 
         <Button style={{
           marginTop: 30,
-          width: '100%', height: 50,
+          width: '100%', height: 40,
           borderRadius: 25,
           alignItems: 'center', justifyContent: 'center',
           background: '#faa62a', display: 'flex'
-        }}>
-          <span style={{fontSize:20}}>Submit</span>
+        }} onClick={this.props.onClick}>
+          <span style={{ fontSize: 20 }}>Submit</span>
         </Button>
       </div>
     )

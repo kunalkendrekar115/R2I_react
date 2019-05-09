@@ -13,7 +13,7 @@ import TextField from '@material-ui/core/TextField';
 class CountryLanding extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { country: {}, showDialog: true }
+        this.state = { country: {}, showDialog: false }
     }
 
     componentDidMount() {
@@ -29,8 +29,8 @@ class CountryLanding extends React.Component {
                     height: 50, background: '#20bad2',
                 }}>
                     <img alt="img" style={{
-                        width: 130, height: 40,
-                        backgroundSize: 'contain',
+                        width: 130, height: 38,
+                        objectFit: 'contain',
                         marginLeft: 10, marginTop: 5
                     }} src={DASH_LOGO}></img>
 
@@ -41,19 +41,22 @@ class CountryLanding extends React.Component {
                             backgroundRepeat: 'no-repeat',
                             paddingLeft: 20,
                             paddingTop: 5,
-                            minWidth: 100,
+                            minWidth: 80,
                             textAlign: 'center',
                             paddingRight: 38,
                             backgroundImage: 'url(' + CHANGE_COUNTRY + ')'
-                        }}>
-                        <span style={{ fontSize: 18, marginTop: 5 }}>{this.state.country.name}</span>
+                        }}
+                        onClick={() => this.props.history.push('countryList')}
+                    >
+                        <span style={{ fontSize: 16, marginTop: 5 }}>{this.state.country.name}</span>
                     </div>
                 </div>
 
                 <div style={{ paddingTop: 20, paddingBottom: 20, background: '#20bad2', display: 'flex' }}>
 
                     <Carousel
-
+                        infiniteLoop={true}
+                        autoPlay
                         showArrows={false}
                         showIndicators={false}
                         showThumbs={false}
@@ -65,22 +68,30 @@ class CountryLanding extends React.Component {
 
                     </Carousel >
                 </div>
-                <ExchangeCalculator></ExchangeCalculator>
+                <ExchangeCalculator
+                    onClick={() => this.setState({ showDialog: true })}
+                ></ExchangeCalculator>
 
                 <Dialog
                     fullWidth
+                    onClick={() => this.setState({ showDialog: false })}
                     maxWidth={'lg'}
                     aria-labelledby="max-width-dialog-title"
                     autoScrollBodyContent={false}
                     open={this.state.showDialog}>
-                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center',backgroundColor:'transparent' }}>
+                    <div style={{
+                        display: 'flex', flexDirection: 'column', alignItems: 'center',
+                        backgroundColor: 'transparent'
+                    }}>
                         <div style={{
-                            padding: 16, display: 'flex',
+                            padding: 20, display: 'flex',
                             width: '100%',
+                            marginTop: 20,
                             boxSizing: 'border-box',
                             alignItems: 'center',
                             flexDirection: 'column', backgroundColor: '#d1d1d1'
-                        }}>
+                        }}
+                            onClick={(e) => e.stopPropagation()}>
 
                             <span>Get started with your e-mail</span>
                             <TextField
@@ -91,19 +102,19 @@ class CountryLanding extends React.Component {
 
                             <Button style={{
                                 marginTop: 20,
-                                width: '100%', height: 50,
+                                width: '100%', height: 40,
                                 borderRadius: 25,
                                 alignItems: 'center', justifyContent: 'center',
                                 background: '#faa62a', display: 'flex'
                             }}>
-                                <span style={{ fontSize: 20 }}>Submit</span>
+                                <span style={{ fontSize: 12 }}>Submit</span>
                             </Button>
                         </div>
 
                         <img alt="close" src={CLOSE} style={{
                             width: 30,
-                            height: 30, marginTop: 30
-                        }}></img>
+                            height: 30, marginTop: 40
+                        }} onClick={() => this.setState({ showDialog: false })}></img>
                     </div>
                 </Dialog>
             </div>
