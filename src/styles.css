@@ -1,0 +1,22 @@
+
+.countryChange{
+
+    background-size: 'contain';
+    background-repeat: 'no-repeat';
+    padding-left: 16;
+    height: 20;
+    width: auto;
+    display: inline-block;
+    padding-right: 30;
+   
+}
+
+.activeTab{
+    color:#1074ac;
+}
+.inactiveTab{
+    color: #808080;
+}
+input:focus{
+    outline:none
+}
