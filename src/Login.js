@@ -41,32 +41,32 @@ export default class Login extends Component {
                 <img alt="" style={{ width: 100, height: 100, marginTop: 30 }} src={PROFILE_ICON} />
 
 
-                <span style={{ marginTop: 30, fontSize: 14 }}>kunalkendrekar115@gmail.com</span>
+                <span style={{ marginTop: 20, fontSize: 14 }}>kunalkendrekar115@gmail.com</span>
 
                 <div style={{
                     display: 'flex', flexDirection: 'row',
                     justifyContent: 'center',
-                    marginTop: 20, width: '100%', height: 35
+                    marginTop: 20, width: '60%', height: 35
                 }}>
 
                     <div style={{
 
-                        display: 'flex', height: '100%', width: 110, border: '1px  solid #1074ac',
+                        display: 'flex', height: '100%', flex:1, border: '1px  solid #1074ac',
                         borderRadius: '20px 0px 0px 20px', justifyContent: 'center', alignItems: 'center',
                         background: SELECTED_MODE === PASSWORD ? '#1074ac' : 'white'
 
                     }} onClick={() => this.setState({ SELECTED_MODE: PASSWORD })}>
 
-                        <span style={{ fontSize: 14, color: SELECTED_MODE === PASSWORD ? 'white' : 'black' }}>Password</span>
+                        <span style={{ fontSize: 15, color: SELECTED_MODE === PASSWORD ? 'white' : 'black' }}>Password</span>
 
                     </div>
                     <div style={{
                         borderRadius: '0px 20px 20px 0px',
                         justifyContent: 'center', alignItems: 'center',
-                        display: 'flex', height: '100%', width: 110, border: '1px solid #1074ac',
+                        display: 'flex', height: '100%',flex:1, border: '1px solid #1074ac',
                         background: SELECTED_MODE === MPIN ? '#1074ac' : 'white'
                     }} onClick={() => this.setState({ SELECTED_MODE: MPIN })}>
-                        <span style={{ fontSize: 14, color: SELECTED_MODE === MPIN ? 'white' : 'black' }}>MPIN</span>
+                        <span style={{ fontSize: 15, color: SELECTED_MODE === MPIN ? 'white' : 'black' }}>MPIN</span>
                     </div>
                 </div>
 
