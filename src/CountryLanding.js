@@ -106,14 +106,14 @@ class CountryLanding extends React.Component {
                                 borderRadius: 25,
                                 alignItems: 'center', justifyContent: 'center',
                                 background: '#faa62a', display: 'flex'
-                            }}>
+                            }} onClick={() => { this.props.history.push('login') }}>
                                 <span style={{ fontSize: 12 }}>Submit</span>
                             </Button>
                         </div>
 
                         <img alt="close" src={CLOSE} style={{
-                            width: 30,
-                            height: 30, marginTop: 40
+                            width: 40,
+                            height: 40, marginTop: 40
                         }} onClick={() => this.setState({ showDialog: false })}></img>
                     </div>
                 </Dialog>

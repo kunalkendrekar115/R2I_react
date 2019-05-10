@@ -99,7 +99,7 @@ export default class ExchangeCalculator extends Component {
 
         <Button style={{
           marginTop: 30,
-          width: '100%', height: 40,
+          width: '100%', height: 50,
           borderRadius: 25,
           alignItems: 'center', justifyContent: 'center',
           background: '#faa62a', display: 'flex'
