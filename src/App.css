@@ -8,6 +8,19 @@
   pointer-events: none;
 }
 
+.pin {
+  height: 30px;
+  display: flex;
+  margin: 0px 10px;
+  border: 0;
+  outline: none;
+  font-size: 16px;
+  text-align: center;
+  width: 35px;
+  border-bottom: 1px solid black;
+  background: transparent
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -19,6 +32,13 @@
   color: white;
 }
 
+input:focus { 
+  border-bottom: 1px solid blue;
+}
+
+input:not(:empty){
+  border-bottom: 1px solid yellow;
+}
 .App-link {
   color: #61dafb;
 }

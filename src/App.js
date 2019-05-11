@@ -18,10 +18,10 @@ function App(props) {
   return (
     <div>
       <Router>
-         <Route path="/" exact component={CountrySelection} /> 
-        <Route path="/countryLanding" exact component={CountryLanding} />
+         {/* <Route path="/" exact component={CountrySelection} /> 
+        <Route path="/countryLanding" exact component={CountryLanding} /> */}
         <Route path="/countryList" exact component={CountryList} />
-        <Route path="/login" exact component={Login} />
+        <Route path="/" exact component={Login} />
     
       </Router>
 

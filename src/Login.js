@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
+import PinEntry from './PinEntry';
 
 const MPIN = "min"
 const PASSWORD = "password"
@@ -51,7 +52,7 @@ export default class Login extends Component {
 
                     <div style={{
 
-                        display: 'flex', height: '100%', flex:1, border: '1px  solid #1074ac',
+                        display: 'flex', height: '100%', flex: 1, border: '1px  solid #1074ac',
                         borderRadius: '20px 0px 0px 20px', justifyContent: 'center', alignItems: 'center',
                         background: SELECTED_MODE === PASSWORD ? '#1074ac' : 'white'
 
@@ -63,7 +64,7 @@ export default class Login extends Component {
                     <div style={{
                         borderRadius: '0px 20px 20px 0px',
                         justifyContent: 'center', alignItems: 'center',
-                        display: 'flex', height: '100%',flex:1, border: '1px solid #1074ac',
+                        display: 'flex', height: '100%', flex: 1, border: '1px solid #1074ac',
                         background: SELECTED_MODE === MPIN ? '#1074ac' : 'white'
                     }} onClick={() => this.setState({ SELECTED_MODE: MPIN })}>
                         <span style={{ fontSize: 15, color: SELECTED_MODE === MPIN ? 'white' : 'black' }}>MPIN</span>
@@ -110,12 +111,7 @@ export default class Login extends Component {
                     alignItems: 'center',
                     width: '100%', margin: 20, justifyContent: 'center'
                 }}>
-                    <TextField
-                        type="number"
-                        style={{ width: '80%' }}
-                        id="standard-name"
-                        label="MPIN"
-                        margin="none" />
+                    <PinEntry></PinEntry>
                     <Button style={{
                         marginTop: 30,
                         width: '80%', height: 50,
