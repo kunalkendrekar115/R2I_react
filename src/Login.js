@@ -2,8 +2,8 @@ import { BACKGROUND, LOGO, PROFILE_ICON } from './assets';
 import React, { Component } from 'react'
 
 import Button from '@material-ui/core/Button';
-import TextField from '@material-ui/core/TextField';
 import PinEntry from './PinEntry';
+import TextField from '@material-ui/core/TextField';
 
 const MPIN = "min"
 const PASSWORD = "password"
@@ -47,7 +47,8 @@ export default class Login extends Component {
                 <div style={{
                     display: 'flex', flexDirection: 'row',
                     justifyContent: 'center',
-                    marginTop: 20, width: '60%', height: 35
+                    marginTop: 20, width: '50%', height: 35,
+                    marginBottom:10
                 }}>
 
                     <div style={{
@@ -92,7 +93,7 @@ export default class Login extends Component {
                         label="Password"
                         margin="none" />
                     <Button style={{
-                        marginTop: 30,
+                        marginTop: 40,
                         width: '80%', height: 50,
                         borderRadius: 25,
                         alignItems: 'center', justifyContent: 'center',
@@ -113,7 +114,7 @@ export default class Login extends Component {
                 }}>
                     <PinEntry></PinEntry>
                     <Button style={{
-                        marginTop: 30,
+                        marginTop: 40,
                         width: '80%', height: 50,
                         borderRadius: 25,
                         alignItems: 'center', justifyContent: 'center',

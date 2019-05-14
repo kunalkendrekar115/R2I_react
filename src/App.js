@@ -6,6 +6,7 @@ import { Route, BrowserRouter as Router } from "react-router-dom";
 import CountryLanding from './CountryLanding';
 import CountryList from './CountryList';
 import CountrySelection from './CountrySelection';
+import Dashboard from './Dashboard';
 import Login from './Login';
 import PropTypes from 'prop-types';
 import React from 'react';
@@ -18,11 +19,12 @@ function App(props) {
   return (
     <div>
       <Router>
-         {/* <Route path="/" exact component={CountrySelection} /> 
-        <Route path="/countryLanding" exact component={CountryLanding} /> */}
+     {/*    <Route path="/" exact component={CountrySelection} /> */}
+        <Route path="/countryLanding" exact component={CountryLanding} />
         <Route path="/countryList" exact component={CountryList} />
-        <Route path="/" exact component={Login} />
-    
+        <Route path="/login" exact component={Login} />
+        <Route path="/" exact component={Dashboard} />
+
       </Router>
 
     </div>

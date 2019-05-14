@@ -1,6 +1,7 @@
-import React from 'react';
-import Input from '@material-ui/core/Input';
 import './App.css'
+
+import Input from '@material-ui/core/Input';
+import React from 'react';
 
 class PinEntry extends React.Component {
     constructor(props) {
@@ -86,7 +87,7 @@ class PinEntry extends React.Component {
                 <input
                     ref={(input) => { this.tp5 = input; }}
                     className="pin"
-                    type="password" pattern="[0-9]*" inputmode="numeric"
+                    type="password"  inputmode="numeric"
                     onChange={(text) => this.updateText(5, text, this.tp4, null)}
                     maxLength={1}
 

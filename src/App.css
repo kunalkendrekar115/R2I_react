@@ -16,11 +16,15 @@
   outline: none;
   font-size: 16px;
   text-align: center;
-  width: 35px;
+  width: 40px;
   border-bottom: 1px solid black;
   background: transparent
 }
 
+.MuiBottomNavigationAction-selected-4{
+
+   color:white !important
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
