@@ -8,8 +8,8 @@
     padding-right: 30;
 }
 
-[class*="MuiDialog-paper"] {
-    margin: 20px !important;
+.MuiDialog-paper-34 {
+    margin: 30px !important;
 }
 
 [class*="MuiPaper-elevation"] {

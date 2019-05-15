@@ -21,7 +21,7 @@
   background: transparent
 }
 
-.MuiBottomNavigationAction-selected-4{
+[class*='MuiBottomNavigationAction-selected']{
 
    color:white !important
 }

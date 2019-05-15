@@ -48,7 +48,7 @@ export default class Login extends Component {
                     display: 'flex', flexDirection: 'row',
                     justifyContent: 'center',
                     marginTop: 20, width: '50%', height: 35,
-                    marginBottom:10
+                    marginBottom: 10
                 }}>
 
                     <div style={{
@@ -98,7 +98,7 @@ export default class Login extends Component {
                         borderRadius: 25,
                         alignItems: 'center', justifyContent: 'center',
                         background: '#faa62a', display: 'flex'
-                    }} >
+                    }} onClick={() => this.props.history.push('dashboard')}>
                         <span style={{ fontSize: 20 }}>Submit</span>
                     </Button>
                     <span style={{ fontSize: 14, marginTop: 20 }}>Forgot Password</span>
@@ -119,7 +119,7 @@ export default class Login extends Component {
                         borderRadius: 25,
                         alignItems: 'center', justifyContent: 'center',
                         background: '#faa62a', display: 'flex'
-                    }} >
+                    }} onClick={() => this.props.history.push('dashboard')}>
                         <span style={{ fontSize: 20 }}>Submit</span>
                     </Button>
                     <span style={{ fontSize: 14, marginTop: 20 }}>Forgot MPIN</span>

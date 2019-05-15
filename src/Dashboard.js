@@ -2,14 +2,15 @@ import './App.css'
 
 import BottomNavigation from '@material-ui/core/BottomNavigation';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
+import DashboardTab from './DashboardTab';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import HomeIcon from '@material-ui/icons/Home';
+import { Link } from 'react-router-dom';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
+import Login from './Login';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
-import { Link } from 'react-router-dom';
-import Login from './Login';
 
 const styles = {
     stickToBottom: {
@@ -22,7 +23,7 @@ const styles = {
 
 class Dashboard extends React.Component {
     state = {
-        value: 0,
+        value: 0
     };
 
     handleChange = (event, value) => {
@@ -45,25 +46,22 @@ class Dashboard extends React.Component {
                     className={classes.stickToBottom}>
 
                     <BottomNavigationAction
-                        style={{ width: '33%', color: '#1074ac', fontSize: 9 }}
+                        style={{ width: '25%', color: '#1074ac', fontSize: 9 }}
                         icon={<HomeIcon></HomeIcon>}
-                        label="Recents" />
+                        label="Home" />
                     <BottomNavigationAction
-                        style={{ width: '33%', color: '#1074ac' }}
-                        label="Favorites" icon={<FavoriteIcon />} />
+                        style={{ width: '25%', color: '#1074ac' }}
+                        label="Send" icon={<FavoriteIcon />} />
                     <BottomNavigationAction
-                        style={{ width: '33%', color: '#1074ac' }}
-                        label="Nearby" icon={<LocationOnIcon />} />
+                        style={{ width: '25%', color: '#1074ac' }}
+                        label="Transactions" icon={<LocationOnIcon />} />
                     <BottomNavigationAction
-                        style={{ width: '33%', color: '#1074ac' }}
-                        label="Nearby" icon={<LocationOnIcon />} />
-                    <BottomNavigationAction
-                        style={{ width: '33%', color: '#1074ac' }}
-                        label="Nearby" icon={<LocationOnIcon />} />
+                        style={{ width: '25%', color: '#1074ac' }}
+                        label="Profile" icon={<LocationOnIcon />} />
                 </BottomNavigation>
 
-                <div style={{ marginBottom: 60 }}>
-                    {this.state.value === 0 && <Login></Login>}
+                <div style={{ height: '93%', position: 'fixed', overflow: 'auto' }}>
+                    {this.state.value === 0 && <DashboardTab></DashboardTab>}
                 </div>
             </div>
 
