@@ -2,13 +2,14 @@ import './styles.css'
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 import { CHANGE_COUNTRY, CLOSE, DASH_LOGO } from './assets';
-
-import Button from '@material-ui/core/Button';
 import { Carousel } from 'react-responsive-carousel';
-import Dialog from '@material-ui/core/Dialog';
 import ExchangeCalculator from './ExchangeCalculator';
 import React from 'react';
-import TextField from '@material-ui/core/TextField';
+
+import EmailDialog from './EmailDialog';
+
+
+
 
 class CountryLanding extends React.Component {
     constructor(props) {
@@ -21,6 +22,7 @@ class CountryLanding extends React.Component {
         this.setState({ country: this.props.location.state })
     }
     render() {
+        const { classes } = this.props;
         return (
             <div style={{ flex: 1, flexDirection: 'column', width: '100%' }}>
                 <div style={{
@@ -72,54 +74,14 @@ class CountryLanding extends React.Component {
                     onClick={() => this.setState({ showDialog: true })}
                 ></ExchangeCalculator>
 
-                <Dialog
-                    fullWidth
-                    onClick={() => this.setState({ showDialog: false })}
-                    maxWidth={'lg'}
-                    aria-labelledby="max-width-dialog-title"
-                    autoScrollBodyContent={false}
-                    open={this.state.showDialog}>
-                    <div style={{
-                        display: 'flex', flexDirection: 'column', alignItems: 'center',
-                        backgroundColor: 'transparent'
-                    }}>
-                        <div style={{
-                            padding: 20, display: 'flex',
-                            width: '100%',
-                            marginTop: 20,
-                            boxSizing: 'border-box',
-                            alignItems: 'center',
-                            flexDirection: 'column', backgroundColor: '#d1d1d1'
-                        }}
-                            onClick={(e) => e.stopPropagation()}>
-
-                            <span>Get started with your e-mail</span>
-                            <TextField
-                                fullWidth
-                                id="standard-name"
-                                label="Email ID"
-                                margin="dense" />
-
-                            <Button style={{
-                                marginTop: 20,
-                                width: '100%', height: 40,
-                                borderRadius: 25,
-                                alignItems: 'center', justifyContent: 'center',
-                                background: '#faa62a', display: 'flex'
-                            }} onClick={() => { this.props.history.push('login') }}>
-                                <span style={{ fontSize: 12 }}>Submit</span>
-                            </Button>
-                        </div>
-
-                        <img alt="close" src={CLOSE} style={{
-                            width: 40,
-                            height: 40, marginTop: 40
-                        }} onClick={() => this.setState({ showDialog: false })}></img>
-                    </div>
-                </Dialog>
+                <EmailDialog
+                    showDialog={this.state.showDialog}
+                    submit={() => this.props.history.push('login')}
+                    close={() => this.setState({ showDialog: false })}
+                ></EmailDialog>
             </div>
         );
     }
 }
 
-export default CountryLanding;
+export default CountryLanding

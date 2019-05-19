@@ -1,7 +1,7 @@
 import './App.css';
 
 import { MuiThemeProvider, createMuiTheme, withStyles } from '@material-ui/core/styles';
-import { Route, BrowserRouter as Router } from "react-router-dom";
+import { Route, BrowserRouter as Router,Switch } from "react-router-dom";
 
 import CountryLanding from './CountryLanding';
 import CountryList from './CountryList';
@@ -19,17 +19,21 @@ function App(props) {
   return (
     <div>
       <Router>
-         <Route path="/" exact component={CountrySelection} /> 
-        <Route path="/countryLanding" exact component={CountryLanding} />
-        <Route path="/countryList" exact component={CountryList} />
-        <Route path="/login" exact component={Login} />
-        <Route path="/dashboard" exact component={Dashboard} />
+        <Switch>
+
+          <Route path="/" exact component={CountrySelection} />
+          <Route path="/countrySelection" exact component={CountrySelection} />        
+          <Route path="/countryLanding" exact component={CountryLanding} />
+          <Route path="/countryList" exact component={CountryList} />
+          <Route path="/login" exact component={Login} />
+          <Route path="/dashboard" exact component={Dashboard} />
+        </Switch>
+
 
       </Router>
 
     </div>
   );
 }
-
 
 export default App

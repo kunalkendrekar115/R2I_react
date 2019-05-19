@@ -1,17 +1,33 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
+import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Paper';
 import logo from './logo.svg';
 
 import { BACKGROUND, US, UK, AUS, CAN, IRE, LOGO } from './assets';
+import { installPromptEvent } from '.';
+
+
 class CountrySelection extends React.Component {
+
+
     constructor(props) {
         super(props);
         this.state = {
-            countries: [{ id: 1, name: 'United States' }, { id: 2, name: 'United Kingdom' }, { id: 3, name: 'Austrelia' }
+            countries: [{ id: 1, name: 'United States' },
+            { id: 2, name: 'United Kingdom' }, { id: 3, name: 'Austrelia' }
                 , { id: 5, name: 'Ireland' }, { id: 4, name: 'Canada' }]
+            , installPromptEvent: null
         }
+    }
+
+    componentDidMount() {
+        window.addEventListener('beforeinstallprompt', (event) => {
+            // Prevent Chrome <= 67 from automatically showing the prompt
+            event.preventDefault();
+            // Stash the event so it can be triggered later.
+            this.setState({ installPromptEvent: event })
+        });
     }
     render() {
         return (
@@ -35,6 +51,16 @@ class CountrySelection extends React.Component {
                 <Grid container>
                     {this.state.countries.map((country) => this.renderCountry(country))}
                 </Grid>
+
+                {this.state.installPromptEvent && <Button style={{
+                    marginTop: 40,
+                    width: '80%', height: 50,
+                    borderRadius: 25,
+                    alignItems: 'center', justifyContent: 'center',
+                    background: '#faa62a', display: 'flex'
+                }} onClick={() => this.state.installPromptEvent.prompt()}>
+                    <span style={{ fontSize: 20 }}>Add R2I to Home Screen</span>
+                </Button>}
             </div >
         );
     }
@@ -72,7 +98,7 @@ class CountrySelection extends React.Component {
                     display: 'flex',
                 }}
                     onClick={() => {
-                        this.props.history.push('countryLanding',country)
+                        this.props.history.push('countryLanding', country)
                     }}
                 >
                     <img alt="" style={{ width: 60, height: 60 }} src={flag} />

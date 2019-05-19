@@ -8,7 +8,7 @@
     padding-right: 30;
 }
 
-.MuiDialog-paper-34 {
+/* .MuiDialog-paper-34 {
     margin: 30px !important;
 }
 
@@ -18,7 +18,7 @@
 
 [class*="MuiPaper-root"] {
     background-color: transparent !important;
-}
+} */
 
 .activeTab {
     color: #1074ac;

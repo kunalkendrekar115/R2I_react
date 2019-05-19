@@ -18,7 +18,14 @@ const styles = {
         position: 'fixed',
         bottom: 0,
         backgroundColor: '#20bad2'
+
     },
+    root: {
+        color: '#1074ac',      
+    },
+    selected: {
+        color: 'white  !important'
+    }
 };
 
 class Dashboard extends React.Component {
@@ -46,17 +53,17 @@ class Dashboard extends React.Component {
                     className={classes.stickToBottom}>
 
                     <BottomNavigationAction
-                        style={{ width: '25%', color: '#1074ac', fontSize: 9 }}
+                        classes={{ selected: classes.selected, root: classes.root }}
                         icon={<HomeIcon></HomeIcon>}
                         label="Home" />
                     <BottomNavigationAction
-                        style={{ width: '25%', color: '#1074ac' }}
+                        classes={{ selected: classes.selected, root: classes.root }}
                         label="Send" icon={<FavoriteIcon />} />
                     <BottomNavigationAction
-                        style={{ width: '25%', color: '#1074ac' }}
+                        classes={{ selected: classes.selected, root: classes.root }}
                         label="Transactions" icon={<LocationOnIcon />} />
                     <BottomNavigationAction
-                        style={{ width: '25%', color: '#1074ac' }}
+                        classes={{ selected: classes.selected, root: classes.root }}
                         label="Profile" icon={<LocationOnIcon />} />
                 </BottomNavigation>
 
